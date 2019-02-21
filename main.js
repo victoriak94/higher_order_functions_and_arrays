@@ -19,3 +19,19 @@ const companies= [
   });
 
   // filter
+
+  let canDrink = [];
+
+  for (let i = 0; i < ages.length; i++) {
+    if (ages[i] >= 21) {
+        canDrink.push(ages[i]);
+    }
+  }
+
+  const canDrink = ages.filter(age => {
+    if(age >= 21) {
+        return true;
+    }
+  })
+
+  const canDrink = ages.filter(age => age >= 21);
