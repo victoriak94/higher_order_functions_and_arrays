@@ -18,20 +18,31 @@ const companies= [
     console.log(company.name);
   });
 
-  // filter
+  // filter 21 and older
 
-  let canDrink = [];
+//   let canDrink = [];
 
-  for (let i = 0; i < ages.length; i++) {
-    if (ages[i] >= 21) {
-        canDrink.push(ages[i]);
-    }
-  }
+//   for (let i = 0; i < ages.length; i++) {
+//     if (ages[i] >= 21) {
+//         canDrink.push(ages[i]);
+//     }
+//   }
 
-  const canDrink = ages.filter(age => {
-    if(age >= 21) {
-        return true;
-    }
-  })
+//   const canDrink = ages.filter(age => {
+//     if(age >= 21) {
+//         return true;
+//     }
+//   })
 
   const canDrink = ages.filter(age => age >= 21);
+
+  // filter retail companies
+  
+//   const retailCompanies = companies.filter(function(company) {
+//       if(company.category === 'Retail') {
+//           return true;
+//       }
+//   });
+
+  const retailCompanies = companies.filter(company => company.category === 'Retail');
+  console.log(retailCompanies);
