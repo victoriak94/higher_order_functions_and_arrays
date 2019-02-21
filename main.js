@@ -46,3 +46,13 @@ const companies= [
 
   const retailCompanies = companies.filter(company => company.category === 'Retail');
   console.log(retailCompanies);
+
+    // filter 80's companies
+
+  const eightiesCompanies = companies.filter(company => (company.start >= 1980 && company.start < 1990));
+  console.log(eightiesCompanies);
+
+  // filter companies that lasted 10 years or more
+
+  const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
+  console.log(lastedTenYears);
