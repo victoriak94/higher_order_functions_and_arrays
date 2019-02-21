@@ -10,13 +10,13 @@ const companies= [
     {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
   ];
   
-  const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
   // forEach
 
-  companies.forEach( company => {
+companies.forEach( company => {
     console.log(company.name);
-  });
+});
 
   // filter 21 and older
 
@@ -34,7 +34,7 @@ const companies= [
 //     }
 //   })
 
-  const canDrink = ages.filter(age => age >= 21);
+const canDrink = ages.filter(age => age >= 21);
 
   // filter retail companies
   
@@ -44,15 +44,66 @@ const companies= [
 //       }
 //   });
 
-  const retailCompanies = companies.filter(company => company.category === 'Retail');
-  console.log(retailCompanies);
+const retailCompanies = companies.filter(company => company.category === 'Retail');
+console.log(retailCompanies);
 
     // filter 80's companies
 
-  const eightiesCompanies = companies.filter(company => (company.start >= 1980 && company.start < 1990));
-  console.log(eightiesCompanies);
+const eightiesCompanies = companies.filter(company => (company.start >= 1980 && company.start < 1990));
+console.log(eightiesCompanies);
 
-  // filter companies that lasted 10 years or more
+    // filter companies that lasted 10 years or more
 
-  const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
-  console.log(lastedTenYears);
+const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
+console.log(lastedTenYears);
+
+    // map
+    // Create array of company names
+const companyNames = companies.map(company => company.name);
+console.log(companyNames);
+
+const agesSquare = ages.map(age => Math.sqrt(age));
+console.log(agesSquare);
+
+const agesTimesTwo = ages.map(age => age * 2);
+console.log(agesTimesTwo);
+
+const ageMap = ages
+    .map(age => Math.sqrt(age))
+    .map(age => age * 2);
+console.log(ageMap);
+
+    // sort
+
+    //sort companies by start year
+
+// const sortedCompanies = companies.sort(function(c1, c2) {
+//     if(c1.start > c2.start) {
+//         return 1;
+//     } else {
+//         return -1;
+//     }
+// });
+
+const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1)); // Using ternary operator: state condition, ? means if condition is true, return statement after ?. : means else, return value after :
+
+console.log(sortedCompanies);
+
+    // sort ages
+
+const sortAges = ages.sort((a, b ) => a - b);
+console.log(sortAges);
+
+    // reduce
+
+// let ageSum = 0;
+// for(let i = 0; i < ages.length; i++) {
+//     ageSum +- ages[i];
+// };
+
+// const ageSum = ages.reduce(function(total, age) {
+//     return total + age;
+// }, 0);
+
+const ageSum = ages.reduce((total, age) => total + age, 0);
+console.log(ageSum);
